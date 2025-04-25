@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: doow0o5pb-nodejs-gitops
+  description: This is GitOps manifest for doow0o5pb-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=doow0o5pb-nodejs
+    backstage.io/kubernetes-id: doow0o5pb-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: doow0o5pb-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:doow0o5pb-nodejs
